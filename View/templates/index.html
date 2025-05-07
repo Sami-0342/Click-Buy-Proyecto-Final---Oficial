@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        </style>
-    <link
-    rel="icon"
-    type="image/png"
-    href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-        </style>
     <title>Click & Buy</title>
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Ícono -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/inicio.css') }}">
 </head>
 <body>
@@ -21,113 +20,118 @@
         <div class="left">
             <div class="menu-container">
                 <div class="menu" id="menu">
-                    <img src="{{ url_for('static', filename='IMGs/icons/menu-svgrepo-com (1).svg') }}" alt="">
+                    <img src="{{ url_for('static', filename='IMGs/icons/menu-svgrepo-com (1).svg') }}" alt="Menu">
                 </div>
             </div>
             <div class="brand">
-                <img class="logo" src="{{ url_for('static', filename='IMGs/asdas.png')}}" alt="logo">
-                <span class="nam"> <span class="dec">Click</span> & Buy</span>
+                <img class="logo" src="{{ url_for('static', filename='IMGs/asdas.png')}}" alt="Logo">
+                <span class="nam"><span class="dec">Click</span> & Buy</span>
             </div>
         </div>
         <div class="right">
             <a href="#" class="icons-header">
-                <img src="{{ url_for('static', filename='IMGs/icons/bell-svgrepo-com.svg')}}" alt="notifications">
+                <img src="{{ url_for('static', filename='IMGs/icons/bell-svgrepo-com.svg')}}" alt="Notificaciones">
             </a>
-            <a href="/login"><img src="{{ url_for('static', filename='IMGs/Comerciante.png')}}" class="user" alt="User">
+            <a href="/login">
+                <img src="{{ url_for('static', filename='IMGs/Comerciante.png')}}" class="user" alt="Usuario">
             </a>
         </div>
     </header>
+
     <div class="sidebar" id="sidebar">
         <nav>
             <ul>
                 <li>
-                    <a href="" class="search">
-                        <img src="{{ url_for('static', filename='IMGs/icons/search-alt-2-svgrepo-com.svg')}}" alt="buscar">
+                    <a href="#" class="search">
+                        <img src="{{ url_for('static', filename='IMGs/icons/search-alt-2-svgrepo-com.svg')}}" alt="Buscar">
                         <span>Buscar</span>
                     </a>
                 </li>
                 <li>
                     <a href="/index" class="selected">
-                        <img src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg')}}" alt="buscar">
+                        <img src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg')}}" alt="Inicio">
                         <span>Inicio</span>
                     </a>
                 </li>
-                
             </ul>
         </nav>
     </div>
-    <h2 class="slogan">¡Los mejores productos <br>  al mejor precio!</h2>
+
+    <h2 class="slogan">¡Los mejores productos <br> al mejor precio!</h2>
 
     <div class="slof">
-        <video src="{{ url_for('static', filename='IMGs/Videos/2512877-hd_1920_1080_30fps.mp4')}}" loop autoplay ></video>
+        <video src="{{ url_for('static', filename='IMGs/Videos/2512877-hd_1920_1080_30fps.mp4')}}" loop autoplay muted></video>
     </div>
+
     <main id="main">
         <section class="hero">
-            <h1>Encuetra la mejor variedad de Productos</h1>
+            <h1>Encuentra la mejor variedad de Productos</h1>
             <p>Compra los productos hechos a mano de artistas talentosos de todo el mundo.</p>
         </section>
-        <section class="categories"><img src="/Controller/static/IMGs/PageImgs/Para viajes.jpg" alt="">
-            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/domino-studio-164_6wVEHfI-unsplash.jpg') }}" alt="Shoes"><button>Zapatos</button></div>
-            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Cidado Facial.jpg') }}" alt="For Baby"><button>Cuidado Facial</button></div>
-            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Joyas.jpg') }}" alt="Jewelry"><button>Joyas</button></div>
-            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Para viajes.jpg') }}" alt="Traveling"><button>Viajes</button></div>
+
+        <section class="categories">
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/domino-studio-164_6wVEHfI-unsplash.jpg') }}" alt="Zapatos"><button>Zapatos</button></div>
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Cidado Facial.jpg') }}" alt="Cuidado Facial"><button>Cuidado Facial</button></div>
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Joyas.jpg') }}" alt="Joyas"><button>Joyas</button></div>
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Para viajes.jpg') }}" alt="Viajes"><button>Viajes</button></div>
         </section>
+
         <section class="editor-picks">
             <h2>Productos Estrellas</h2>
-            <p>Perosonaliza tu compra y disfruta de la experiencia.</p>
-            <button>Ver mas</button>
+            <p>Personaliza tu compra y disfruta de la experiencia.</p>
+            <button>Ver más</button>
             <div class="gift-items">
-                <div class="gift"><img src="{{ url_for('static', filename='IMGs/PageImgs/Joyas.jpg') }}" alt="Shoes"></div>
-                <div class="gift"><img src="{{ url_for('static', filename='IMGs/PageImgs/domino-studio-164_6wVEHfI-unsplash.jpg') }}" alt="Earrings"></div>
+                <div class="gift"><img src="{{ url_for('static', filename='IMGs/PageImgs/Joyas.jpg') }}" alt="Joyas"></div>
+                <div class="gift"><img src="{{ url_for('static', filename='IMGs/PageImgs/domino-studio-164_6wVEHfI-unsplash.jpg') }}" alt="Zapatos"></div>
             </div>
         </section>
 
         <section class="categories">
-            <h2>Categorias</h2>
+            <h2>Categorías</h2>
             <div class="category-container">
                 <div class="category">
-                    <img src="{{ url_for('static', filename='IMGs/PageImgs/Sala.jpg') }}" alt="For the living room">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/Sala.jpg') }}" alt="Para la sala">
                     <button>Para la sala</button>
                 </div>
                 <div class="category">
-                    <img src="{{ url_for('static', filename='IMGs/PageImgs/cocina.jpg') }}" alt="For the kitchen">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/cocina.jpg') }}" alt="Para la cocina">
                     <button>Para la Cocina</button>
                 </div>
                 <div class="category">
-                    <img src="{{ url_for('static', filename='IMGs/PageImgs/bano.jpg') }}" alt="For the bathroom">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/bano.jpg') }}" alt="Para el baño">
                     <button>Para el Baño</button>
                 </div>
             </div>
         </section>
-        
+
         <section class="trending-products">
             <h2>Productos Famosos</h2>
             <div class="products-container">
                 <div class="product">
-                    <img src="{{ url_for('static', filename='IMGs/PageImgs/lamp.jpg') }}" alt="Lamp">
-                    <p>Juego de Lamparas</p>
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/lamp.jpg') }}" alt="Lamparas">
+                    <p>Juego de Lámparas</p>
                     <span>$120.00</span>
-                </div> 
+                </div>
                 <div class="product">
-                    <img src="{{ url_for('static', filename='IMGs/PageImgs/zapatos.jpg') }}" alt="Soap Dispenser">
-                    <p>Zapatos elegantes</p>
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/zapatos.jpg') }}" alt="Zapatos">
+                    <p>Zapatos Elegantes</p>
                     <span>$35.00</span>
                 </div>
                 <div class="product">
-                    <img src="{{ url_for('static', filename='IMGs//PageImgs/black.jpg') }}" alt="Metal Vase">
-                    <p>Crema Black nigger</p>
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/black.jpg') }}" alt="Crema de cuidado">
+                    <p>Crema de Cuidado</p>
                     <span>$50.00</span>
                 </div>
                 <div class="product">
-                    <img src="{{ url_for('static', filename='IMGs/PageImgs/jabon.jpg') }}" alt="Scented Candle">
-                    <p>Dispensador de Jabon</p>
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/jabon.jpg') }}" alt="Jabón">
+                    <p>Dispensador de Jabón</p>
                     <span>$15.00</span>
                 </div>
             </div>
-            <button class="view-products">Ver Mas.</button>
+            <button class="view-products">Ver Más</button>
         </section>
-        
     </main>
+
     <footer>
         <div class="footer-container">
             <div class="footer-section about">
@@ -160,7 +164,9 @@
             <p>&copy; 2025 Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='JS/estetic.js')}}"></script>
+    <script src="{{ url_for('static', filename='JS/main.js')}}"></script>
 </body>
-<script src="{{ url_for('static', filename='JS/estetic.js')}}"></script>
-<script src="{{ url_for('static', filename='JS/main.js')}}"></script>
 </html>

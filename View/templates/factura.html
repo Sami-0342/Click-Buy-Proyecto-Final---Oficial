@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; }
+        h1, h2 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .footer { margin-top: 40px; text-align: center; font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Factura de Compra</h1>
+    <h2>Cliente: {{ nombre_cliente }}</h2>
+    <p>Dirección de envío: {{ direccion_envio }}</p>
+    <p>Empresa de envío: {{ empresa_envio }}</p>
+    <p>Fecha de compra: {{ fecha_compra }}</p>
+    <p>Fecha estimada de entrega: {{ fecha_entrega }}</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.qty }}</td>
+                <td>${{ item.price }}</td>
+                <td>${{ item.qty * item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 style="text-align: right;">Total: ${{ total }}</h3>
+
+    <div class="footer">
+        Gracias por su compra. Este documento es un comprobante oficial.
+    </div>
+</body>
+</html>

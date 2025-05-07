@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    background: #f3f4f6;
+    padding: 2rem;
+  }
+  .order-details {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .item-card {
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .item-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  

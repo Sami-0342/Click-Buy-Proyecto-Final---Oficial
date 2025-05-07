@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>
+    <link
+    rel="icon"
+    type="image/png"
+    href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+        </style>
+    <title>Click & Buy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/inicio.css') }}">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <img src="{{ url_for('static', filename='IMGs/icons/menu-svgrepo-com (1).svg') }}" alt="">
+                </div>
+            </div>
+            <div class="brand">
+                <img class="logo" src="{{ url_for('static', filename='IMGs/asdas.png')}}" alt="logo">
+                <span class="nam"> <span class="dec">Click</span> & Buy</span>
+            </div>
+        </div>
+        <div class="right">
+            <a href="#" class="icons-header">
+                <img src=" {{ url_for('static', filename= 'IMGs/icons/comment-alt-lines-svgrepo-com.svg')}}" alt="chat">
+            </a>
+            <a href="#" class="icons-header">
+                <img src="{{ url_for('static', filename='IMGs/icons/question-circle-svgrepo-com.svg')}}" alt="questions">
+            </a>
+            <a href="#" class="icons-header">
+                <img src="{{ url_for('static', filename='IMGs/shopping-cart-svgrepo-com.svg')}}" alt="notifications">
+            </a>
+            <a href="/nose"><img src="{{ url_for('static', filename='IMGs/user.jpg')}}" class="user" alt="User">
+            </a>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="" class="search">
+                        <img src="{{ url_for('static', filename='IMGs/icons/search-alt-2-svgrepo-com.svg')}}" alt="buscar">
+                        <span>Buscar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/indexEmpleado" class="selected">
+                        <img src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg')}}" alt="buscar">
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+
+                        <a href="/Catalogo">
+                            <img src="{{ url_for('static', filename='IMGs/icons/shop-2-svgrepo-com.svg')}}" alt="buscar">
+                            <span>Catalogo</span>
+                        </a>
+
+                <li>
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='IMGs/icons/sales-up-graph-svgrepo-com.svg')}}" alt="buscar">
+                        <span>Ventas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='IMGs/icons/gear-settings-svgrepo-com.svg')}}" alt="buscar">
+                        <span>Gestion</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <h2 class="slogan">¡Los mejores productos <br>  al mejor precio!</h2>
+
+    <div class="slof">
+        <video src="{{ url_for('static', filename='IMGs/Videos/2512877-hd_1920_1080_30fps.mp4')}}" loop autoplay ></video>
+    </div>
+    <main id="main">
+        <section class="hero">
+            <h1>Encuetra la mejor variedad de Productos</h1>
+            <p>Compra los productos hechos a mano de artistas talentosos de todo el mundo.</p>
+        </section>
+        <section class="categories"><img src="/Controller/static/IMGs/PageImgs/Para viajes.jpg" alt="">
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/domino-studio-164_6wVEHfI-unsplash.jpg') }}" alt="Shoes"><button>Zapatos</button></div>
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Cidado Facial.jpg') }}" alt="For Baby"><button>Cuidado Facial</button></div>
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Joyas.jpg') }}" alt="Jewelry"><button>Joyas</button></div>
+            <div class="category"><img src="{{ url_for('static', filename='IMGs/PageImgs/Para viajes.jpg') }}" alt="Traveling"><button>Viajes</button></div>
+        </section>
+        <section class="editor-picks">
+            <h2>Productos Estrellas</h2>
+            <p>Perosonaliza tu compra y disfruta de la experiencia.</p>
+            <button><a href="/Catalogo">Ver Mas.</a></button>
+            <div class="gift-items">
+                <div class="gift"><img src="{{ url_for('static', filename='IMGs/PageImgs/Joyas.jpg') }}" alt="Shoes"></div>
+                <div class="gift"><img src="{{ url_for('static', filename='IMGs/PageImgs/domino-studio-164_6wVEHfI-unsplash.jpg') }}" alt="Earrings"></div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Categorias</h2>
+            <div class="category-container">
+                <div class="category">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/Sala.jpg') }}" alt="For the living room">
+                    <button>Para la sala</button>
+                </div>
+                <div class="category">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/cocina.jpg') }}" alt="For the kitchen">
+                    <button>Para la Cocina</button>
+                </div>
+                <div class="category">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/bano.jpg') }}" alt="For the bathroom">
+                    <button>Para el Baño</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="trending-products">
+            <h2>Productos Famosos</h2>
+            <div class="products-container">
+                <div class="product">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/lamp.jpg') }}" alt="Lamp">
+                    <p>Juego de Lamparas</p>
+                    <span>$120.00</span>
+                </div> 
+                <div class="product">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/zapatos.jpg') }}" alt="Soap Dispenser">
+                    <p>Zapatos elegantes</p>
+                    <span>$35.00</span>
+                </div>
+                <div class="product">
+                    <img src="{{ url_for('static', filename='IMGs//PageImgs/black.jpg') }}" alt="Metal Vase">
+                    <p>Crema Black nigger</p>
+                    <span>$50.00</span>
+                </div>
+                <div class="product">
+                    <img src="{{ url_for('static', filename='IMGs/PageImgs/jabon.jpg') }}" alt="Scented Candle">
+                    <p>Dispensador de Jabon</p>
+                    <span>$15.00</span>
+                </div>
+            </div>
+            <button class="view-products"><a href="/Catalogo">Ver Mas.</a></button>
+        </section>
+    </main>
+
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre Nosotros</h2>
+                <p>Somos una agencia especializada en servicios electrónicos y turismo en República Dominicana.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Enlaces Rápidos</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contacto</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Santo Domingo, RD</p>
+                <p><i class="fas fa-phone"></i> +1 809-123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@ejemplo.com</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Síguenos</h2>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='JS/estetic.js')}}"></script>
+<script src="{{ url_for('static', filename='JS/main.js')}}"></script>
+</html>

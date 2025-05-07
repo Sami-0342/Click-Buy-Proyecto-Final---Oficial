@@ -1,0 +1,4 @@
+Flask>=2.0.0
+pyodbc
+gunicorn
+python-dotenv>=0.21.0

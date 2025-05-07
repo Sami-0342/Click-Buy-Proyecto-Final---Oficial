@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+    </style>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='IMGs/asdas.png') }}"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+    </style>
+    <title>Click & Buy</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/inicio.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/Dbastyle.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <div class="menu-container">
+          <div class="menu" id="menu">
+            <img
+              src="{{ url_for('static', filename='IMGs/icons/menu-svgrepo-com (1).svg') }}"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="brand">
+          <img
+            class="logo"
+            src="{{ url_for('static', filename='IMGs/asdas.png') }}"
+            alt="logo"
+          />
+          <span class="nam"> <span class="dec">Click</span> & Buy</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="/nose"
+          ><img
+            src="{{ url_for('static', filename='IMGs/admin.png') }}"
+            class="user"
+            alt="User"
+        /></a>
+      </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+      <nav>
+        <ul>
+          <li>
+            <a href="" class="search">
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/search-alt-2-svgrepo-com.svg') }}"
+                alt="buscar"
+              />
+              <span>Buscar</span>
+            </a>
+          </li>
+          <li>
+            <a href="/indexAdmin" >
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg') }}"
+                alt="buscar"
+              />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="/Catalogo">
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/shop-2-svgrepo-com.svg') }}"
+                alt="buscar"
+              />
+              <span>Catalogo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="gestionUsuarios" >
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/user-gear.svg') }}"
+                alt="buscar"
+              />
+              <span>Gestion de Usuarios</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="gestion">
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/gear-settings-svgrepo-com.svg') }}"
+                alt="buscar"
+              />
+              <span>Gestión</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="gestionPedidos">
+                <img src="{{ url_for('static', filename='IMGs/icons/crabox.png')}}" alt="buscar">
+                <span>Gestión de Pedidos</span>
+            </a>
+        </li>   
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Modal de Usuarios -->
+    <div id="modalUsuarios" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Gestión de Usuarios</h2>
+        <div class="user-options">
+          <div class="option" id="verEmpleados">
+            <img
+              src="{{ url_for('static', filename='IMGs/comerciante.png') }}"
+              alt="Empleado"
+            />
+            <button
+              onclick="window.location.href='/DbaTables/DbaTable?tabla=empleado'"
+            >
+              Ver Empleados
+            </button>
+          </div>
+          <div class="option" id="verClientes">
+            <img
+              src="{{ url_for('static', filename='IMGs/comprador.png') }}"
+              alt="Cliente"
+            />
+            <button
+              onclick="window.location.href='/DbaTables/DbaTable?tabla=cuenta'"
+            >
+              Ver Cuentas
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalGestionP" class="modal">
+      <div class="modal-content">
+          <span class="close" id="closeGestionP">&times;</span>
+          <h2>Gestión</h2>
+          <div class="user-options">
+              <div class="option">
+                  <img src="{{ url_for('static', filename='IMGs/PageImgs/pedidos.jpg') }}" alt="Venta"/>
+                  <button onclick="window.location.href='/DbaTables/DbaTable?tabla=pedido'">Pedidos</button>
+              </div>
+              <div class="option">
+                  <img src="{{ url_for('static', filename='IMGs/producto.jpg') }}" alt="producto"/>
+                  <button onclick="window.location.href='/DbaTables/DbaTable?tabla=pedido_producto'">Detalles</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- Modal de Gestión -->
+    <div id="modalGestion" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeGestion">&times;</span>
+        <h2>Gestión</h2>
+        <div class="user-options">
+          <div class="option">
+            <img
+              src="{{ url_for('static', filename='IMGs/venta.jpg') }}"
+              alt="Venta"
+            />
+            <button
+              onclick="window.location.href='/DbaTables/DbaTable?tabla=venta'"
+            >
+              Ver Ventas
+            </button>
+          </div>
+          <div class="option">
+            <img
+              src="{{ url_for('static', filename='IMGs/producto.jpg') }}"
+              alt="producto"
+            />
+            <button
+              onclick="window.location.href='/DbaTables/DbaTable?tabla=producto'"
+            >
+              Ver Productos
+            </button>
+          </div>
+          <div class="option">
+            <img
+              src="{{ url_for('static', filename='IMGs/comerciante.png') }}"
+              alt="Empleado"
+            />
+            <button
+              onclick="window.location.href='/DbaTables/DbaTable?tabla=empleado'"
+            >
+              Ver Empleados
+            </button>
+          </div>
+          <div class="option">
+            <img
+              src="{{ url_for('static', filename='IMGs/comprador.png') }}"
+              alt="Cliente"
+            />
+            <button
+              onclick="window.location.href='/DbaTables/DbaTable?tabla=cliente'"
+            >
+              Ver Clientes
+            </button>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br />
+    <section id="gestionDatos">
+      <h2>Gestión de Datos</h2>
+      <form id="formularioDatos">
+        <div id="inputsDinamicos">
+          <!-- Los inputs se generarán dinámicamente aquí -->
+        </div>
+        <button type="submit" id="agregarBtn">Agregar</button>
+      </form>
+
+      <h3>Registros</h3>
+      <table id="tablaDatos" border="1">
+        <thead>
+          <tr id="encabezadoTabla">
+            <!-- Encabezados generados dinámicamente -->
+          </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+          <!-- Filas generadas dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+
+    <main id="main">
+      <!-- Aquí se generarán dinámicamente los campos del formulario y la tabla -->
+    </main>
+
+    <script src="{{ url_for('static', filename='JS/estetic.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/Dba.js') }}"></script>
+  </body>
+  <script>
+    document.getElementById("gestionUsuarios").addEventListener("click", function () {
+        document.getElementById("modalUsuarios").style.display = "block";
+    });
+    
+    document.querySelector(".close").addEventListener("click", function () {
+        document.getElementById("modalUsuarios").style.display = "none";
+    });
+    
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("modalUsuarios")) {
+            document.getElementById("modalUsuarios").style.display = "none";
+        }
+    };
+</script>
+<script>
+  // Modal de Gestión
+  document.getElementById("gestion").addEventListener("click", function () {
+      document.getElementById("modalGestion").style.display = "block";
+  });
+
+  document.getElementById("closeGestion").addEventListener("click", function () {
+      document.getElementById("modalGestion").style.display = "none";
+  });
+
+  window.onclick = function (event) {
+      if (event.target == document.getElementById("modalGestion")) {
+          document.getElementById("modalGestion").style.display = "none";
+      }
+  };
+
+   // Modal de GestiónPedidos
+   document.getElementById("gestionPedidos").addEventListener("click", function () {
+      document.getElementById("modalGestionP").style.display = "block";
+  });
+
+  document.getElementById("closeGestionP").addEventListener("click", function () {
+      document.getElementById("modalGestionP").style.display = "none";
+  });
+
+  window.onclick = function (event) {
+      if (event.target == document.getElementById("modalGestionP")) {
+          document.getElementById("modalGestionP").style.display = "none";
+      }
+  };
+</script>
+</html>

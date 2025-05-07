@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos</title>
+  <!-- Enlaza tu CSS principal -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/catalogo.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/catalogoC.css') }}">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link
+  rel="icon"
+  type="image/png"
+  href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+</head>
+<body>
+
+  <!-- Hero / Encabezado principal -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Nuevos Productos!!</h1>
+      <p class="hero-subtitle">Encuentra los mejores muebles para tu hogar</p>
+      <a href="/agregar_producto" class="hero-button">Subir Producto</a>
+    </div>
+    <!-- Aquí puedes poner la imagen de la silla o mueble principal -->
+    <div class="hero-image">
+      <!-- Reemplaza con la imagen que desees -->
+      <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/a.jpg') }}" alt="Hot Product 3">
+    </div>
+  </header>
+
+  <!-- Sección de categorías -->
+  <section class="shop-categories">
+    <h2>Diferentes Categorias</h2>
+    <div class="categories-grid">
+      <!-- Ejemplo de categorías (puedes reemplazar con tus datos reales) -->
+      <div class="category-item">
+          <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/e.jpg') }}" alt="Hot Product 3">
+          <h3>Escritorios</h3>
+      </div>
+      <div class="category-item">
+          <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/b.jpg') }}" alt="Hot Product 3">
+          <h3>Sillas</h3>
+      </div>
+      <div class="category-item">
+          <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/a.jpg') }}" alt="Hot Product 3">
+          <h3>Organicas</h3>
+      </div>
+      <!-- Agrega más según necesites -->
+    </div>
+  </section>
+
+
+  <!-- Sección de “Hot Products” o productos principales -->
+  <section class="hot-products-section">
+    <h2>Productos Populares</h2>
+    <div class="catalogo-container">
+      {% for producto in productos %}
+      <div class="product-card" id="product-{{ producto.id }}">
+        {% if producto.Imagen %}
+          <img class="product-image" src="{{ url_for('static', filename=producto.Imagen) }}" alt="{{ producto.nombre_producto }}">
+        {% else %}
+          <p class="no-image">No hay imagen disponible</p>
+        {% endif %}
+        <div class="product-info">
+          <h3>{{ producto.nombre_producto }}</h3>
+          <p>{{ producto.descripcion }}</p>
+          <p>Cantidad disponible: {{ producto.cantidad_disponible }}</p>
+          <p class="product-price">Precio: ${{ producto.precio }}</p>
+        </div>
+        <div class="product-actions">
+          <button class="btn-modificar" onclick='abrirModalModificar({{ producto|tojson }})'>Modificar</button>
+          <button class="btn-eliminar" onclick="eliminarProducto({{ producto.id }})">Eliminar</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Modal para actualizar el producto -->
+  <div id="modalModificar" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModalModificar()">&times;</span>
+      <h2>Modificar Producto</h2>
+      <form id="formModificar">
+        <input type="hidden" id="mod_id" name="id">
+        
+        <div class="form-group">
+          <label for="mod_nombre_producto">Nombre del Producto</label>
+          <input type="text" id="mod_nombre_producto" name="nombre_producto" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="mod_descripcion">Descripción</label>
+          <textarea id="mod_descripcion" name="descripcion" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="mod_cantidad_disponible">Cantidad Disponible</label>
+          <input type="number" id="mod_cantidad_disponible" name="cantidad_disponible" min="0" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="mod_precio">Precio</label>
+          <input type="number" id="mod_precio" name="precio" min="0" step="0.01" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="mod_imagen">Imagen (opcional)</label>
+          <input type="file" id="mod_imagen" name="imagen" accept="image/*">
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          <button type="button" class="btn btn-secondary" onclick="cerrarModalModificar()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script de funcionalidades -->
+  <script src="{{ url_for('static', filename='JS/Catalogo.js') }}"></script>
+</body>
+</html>

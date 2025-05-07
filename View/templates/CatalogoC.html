@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos</title>
+  <!-- Tu CSS principal -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/carrito.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/catalogoC.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/inicio.css') }}">
+
+  <!-- Librería jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link
+  rel="icon"
+  type="image/png"
+  href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+</head>
+<body>
+  <!-- ====== HEADER ====== -->
+  <header>
+    <div class="left">
+      <div class="menu-container">
+        <div class="menu" id="menu">
+          <img src="{{ url_for('static', filename='IMGs/icons/menu-svgrepo-com (1).svg') }}" alt="">
+        </div>
+      </div>
+      <div class="brand">
+        <img class="logo" src="{{ url_for('static', filename='IMGs/asdas.png')}}" alt="logo">
+        <span class="nam"> <span class="dec">Click</span> & Buy</span>
+      </div>
+    </div>
+    <div class="right">
+      <a href="/carrito" class="icons-header cart-container" style="height: 30px; width: 20px;">
+        <img src="{{ url_for('static', filename='IMGs/icons/shopping-cart-svgrepo-com.svg')}}" alt="Shoping">
+        <span class="cart-badge" id="cart-count">0</span>
+      </a>
+      <a href="/nose">
+        <img src="{{ url_for('static', filename='IMGs/comprador.png')}}" class="user" alt="User">
+      </a>
+    </div>
+  </header>
+  
+  <!-- ====== SIDEBAR ====== -->
+  <div class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li>
+          <a href="" class="search">
+            <img src="{{ url_for('static', filename='IMGs/icons/search-alt-2-svgrepo-com.svg')}}" alt="buscar">
+            <span>Buscar</span>
+          </a>
+        </li>
+        <li>
+          <a href="/indexCliente" >
+            <img src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg')}}" alt="buscar">
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="/CatalogoC" class="selected">
+            <img src="{{ url_for('static', filename='IMGs/icons/shop-2-svgrepo-com.svg')}}" alt="buscar">
+            <span>Catalogo</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main">
+    <!-- Sección "New Collection" (Hero) -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Nuevos Productos!!</h1>
+        <p>Descubre nuestras últimas tendencias en muebles</p>
+        <!-- Si deseas un botón de acción:
+        <button class="btn-hero">Ver Ofertas</button>
+        -->
+      </div>
+      <div class="hero-image">
+        <!-- Aquí puedes usar una imagen grande de fondo o un elemento decorativo -->
+        <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/d.jpg') }}" alt="Hot Product 3">
+    </div>
+    </section>
+
+    <!-- Sección "Shop by Categories" -->
+    <section class="shop-categories">
+      <h2>Diferentes Categorias</h2>
+      <div class="categories-grid">
+        <!-- Ejemplo de categorías (puedes reemplazar con tus datos reales) -->
+        <div class="category-item">
+            <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/e.jpg') }}" alt="Hot Product 3">
+            <h3>Escritorios</h3>
+        </div>
+        <div class="category-item">
+            <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/b.jpg') }}" alt="Hot Product 3">
+            <h3>Sillas</h3>
+        </div>
+        <div class="category-item">
+            <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/a.jpg') }}" alt="Hot Product 3">
+            <h3>Organicas</h3>
+        </div>
+        <!-- Agrega más según necesites -->
+      </div>
+    </section>
+
+    <!-- Sección "Hot Products" -->
+    <section class="hot-products-section">
+      <h2>Productos Populares</h2>
+      <div class="hot-products-grid">
+        <!-- Aquí puedes destacar algunos productos -->
+        <div class="hot-product">
+            <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/c.jpg') }}" alt="Hot Product 3">
+            <h3>Sofa Modular</h3>
+          <p>Precio: $100</p>
+        </div>
+        <div class="hot-product">
+            <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/g.jpg') }}" alt="Hot Product 3">
+            <h3>Silla Moderna</h3>
+          <p>Precio: $400</p>
+        </div>
+        <div class="hot-product">
+          <img src="{{ url_for('static', filename='IMGs/PageImgs/Cat/f.jpg') }}" alt="Hot Product 3">
+          <h3>Sofa Elegante</h3>
+          <p>Precio: $250</p>
+        </div>
+        <!-- Agrega más destacados si lo deseas -->
+      </div>
+    </section>
+
+    <!-- Sección del Catálogo (productos dinámicos) -->
+    <h1>Catálogo de Productos</h1>
+    <div class="catalogo-container">
+      {% for producto in productos %}
+      <div class="product-card" id="product-{{ producto.id }}">
+        {% if producto.Imagen %}
+          <img class="product-image" src="{{ url_for('static', filename=producto.Imagen) }}" alt="{{ producto.nombre_producto }}">
+        {% else %}
+          <p class="no-image">No hay imagen disponible</p>
+        {% endif %}
+        <div class="product-info">
+          <h3>{{ producto.nombre_producto }}</h3>
+          <p>{{ producto.descripcion }}</p>
+          <p>Cantidad disponible: {{ producto.cantidad_disponible }}</p>
+          <p class="product-price">Precio: ${{ producto.precio }}</p>
+        </div>
+        <div class="product-actions">
+          <button class="btn-modificar">Agregar al Carrito</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Carrito flotante/minicarrito -->
+    <div id="mini-cart" class="mini-cart">
+      <h2>🛒 Carrito de Compras</h2>
+      <ul id="cart-items">
+        <!-- Aquí se llenarán los productos del carrito vía JS -->
+      </ul>
+      <div class="cart-footer">
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <button id="clear-cart" class="clear-cart-btn">Vaciar Carrito</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos una agencia especializada en servicios electrónicos y turismo en República Dominicana.</p>
+      </div>
+      <div class="footer-section links">
+        <h2>Enlaces Rápidos</h2>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h2>Contacto</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Santo Domingo, RD</p>
+        <p><i class="fas fa-phone"></i> +1 809-123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@ejemplo.com</p>
+      </div>
+      <div class="footer-section social">
+        <h2>Síguenos</h2>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script src="{{ url_for('static', filename='JS/estetic.js')}}"></script>
+  <script src="{{ url_for('static', filename='JS/catalogostec.js')}}"></script>
+  <style>
+    
+  </style>
+</body>
+</html>

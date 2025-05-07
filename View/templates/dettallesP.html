@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle Pedido #{{ pedido.id_pedido }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/detalle_pedido.css') }}">
+</head>
+<body>
+  <section class="order-details">
+    <h1>Pedido #{{ pedido.id_pedido }}</h1>
+    <div class="order-header">
+      <p><strong>Cliente:</strong> {{ pedido.id_cliente }}</p>
+      <p><strong>Fecha Compra:</strong> {{ pedido.fecha_compra.strftime('%d/%m/%Y') if pedido.fecha_compra else pedido.fecha_compra }}</p>
+      <p><strong>Estado:</strong> {{ pedido.estado_pedido }}</p>
+      <p><strong>Envío:</strong> {{ pedido.empresa_envio or '—' }}</p>
+      <p><strong>Fecha Estimada:</strong> {{ pedido.fecha_estimada.strftime('%d/%m/%Y') if pedido.fecha_estimada else pedido.fecha_estimada }}</p>
+    </div>
+
+    {% if lineas %}
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for prod in lineas %}
+        <tr>
+          <td><img src="{{ prod.url_imagen }}" alt="{{ prod.nombre_producto }}" width="60"></td>
+          <td>{{ prod.nombre_producto }}</td>
+          <td>{{ prod.cantidad }}</td>
+          <td>${{ '%.2f' % prod.precio_unitario }}</td>
+          <td>${{ '%.2f' % (prod.cantidad * prod.precio_unitario) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No se encontraron productos para este pedido.</p>
+    {% endif %}
+
+    <h2>Total Pedido: ${{ '%.2f' % pedido.total }}</h2>
+    <a class="btn-back" href="{{ url_for('index') }}">← Volver</a>
+  </section>
+</body>
+</html>

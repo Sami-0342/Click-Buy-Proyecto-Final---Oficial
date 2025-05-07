@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmar Compra</title>
+  <link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='CSS/checkout.css') }}"
+/>
+<link
+rel="icon"
+type="image/png"
+href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>🛒 Confirmar Compra</h2>
+
+    <div class="cart-review">
+      <ul id="checkout-cart-list"></ul>
+      <p>Total: <span id="checkout-total">$0.00</span></p>
+    </div>
+<form id="checkout-form" class="checkout-form">
+  <div class="form-group">
+    <label for="empresa_envio">🚚 Empresa de Envío</label>
+    <select id="empresa_envio" required>
+      <option value="" disabled selected>Selecciona una empresa</option>
+      <option value="DHL">DHL</option>
+      <option value="FedEx">FedEx</option>
+      <option value="UPS">UPS</option>
+      <option value="Nacional Express">Nacional Express</option>
+      <option value="Otra">Otra</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="direccion_envio">📍 Dirección</label>
+    <input type="text" id="direccion_envio" placeholder="Ej: Calle 123, Ciudad" required>
+  </div>
+
+  <div class="form-group">
+    <label for="metodo_pago">💳 Método de Pago</label>
+    <select id="metodo_pago" required>
+      <option value="" disabled selected>Selecciona un método</option>
+      <option value="tarjeta">Tarjeta</option>
+      <option value="paypal">PayPal</option>
+      <option value="transferencia">Transferencia</option>
+    </select>
+  </div>
+
+  <button type="submit" class="checkout-button">Finalizar Compra</button>
+</form>
+
+    <div id="checkout-alert"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='JS/checkout.js') }}"></script>
+  <script src="{{ url_for('static', filename='JS/carrito.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/carrito.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/inicio.css') }}"
+    />
+    
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='IMGs/asdas.png')}}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <div class="menu-container">
+          <div class="menu" id="menu">
+            <img
+              src="{{ url_for('static', filename='IMGs/icons/menu-svgrepo-com (1).svg') }}"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="brand">
+          <img
+            class="logo"
+            src="{{ url_for('static', filename='IMGs/asdas.png')}}"
+            alt="logo"
+          />
+          <span class="nam"> <span class="dec">Click</span> & Buy</span>
+        </div>
+      </div>
+      <div class="right">
+        <a href="/nose">
+          <img
+            src="{{ url_for('static', filename='IMGs/comprador.png')}}"
+            class="user"
+            alt="User"
+          />
+        </a>
+      </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+      <nav>
+        <ul>
+          <li>
+            <a href="" class="search">
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/search-alt-2-svgrepo-com.svg')}}"
+                alt="buscar"
+              />
+              <span>Buscar</span>
+            </a>
+          </li>
+          <li>
+            <a href="/indexCliente" >
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg')}}"
+                alt="buscar"
+              />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="/CatalogoC" class="selected">
+              <img
+                src="{{ url_for('static', filename='IMGs/icons/shop-2-svgrepo-com.svg')}}"
+                alt="buscar"
+              />
+              <span>Catalogo</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Modal de detalles -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title">Detalle Pedido</h3>
+          <button id="modal-close">×</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- Aquí se inyecta la tabla de productos -->
+        </div>
+      </div>
+    </div>
+
+    <main id="main">
+      <main id="cart-page">
+        <div class="cart-container">
+          <div class="left-panel">
+            <h2>Productos en tu Carrito</h2>
+            <ul id="cart-items-list">
+              
+            </ul>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button id="checkout-btn">
+              <a href="/checkout">Finalizar Compra</a>
+            </button>
+          </div>
+
+          <!-- --- index.html (fragmento relevante) --- -->
+<div class="right-panel">
+  <h2>Mis Pedidos</h2>
+  <input
+    type="text"
+    id="order-filter"
+    placeholder="🔍 Buscar por número de pedido..."
+    style="
+      margin-bottom: 12px;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    "
+  />
+
+  <!-- Contenedor que da el scroll -->
+  <div class="orders-table-container">
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Numero del Pedido</th>
+          <th>Fecha Estimada</th>
+          <th>Estado del Envio</th>
+          <th>Total</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody id="orders-body">
+        <!-- Aquí se llenarán los pedidos desde JS -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+      </main>
+    </main>
+
+    <script src="{{ url_for('static', filename='JS/carrito.js') }}"></script>
+  </body>
+</html>

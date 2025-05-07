@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+    rel="icon"
+    type="image/png"
+    href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+            </style>
+    <title>Click & Buy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/login.css')}}">
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="container">
+        <a href="/index"><img class="salir" src="{{ url_for('static', filename='IMGs/icons/home-smile-angle-svgrepo-com.svg')}}" alt=""></a>
+        <div class="container-form">
+            <form action="/login" class="sign-in" method="post" >
+                <h2>Iniciar Sesion</h2>
+                <div class="social-networks">
+                    <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/github-142-svgrepo-com.svg')}}" alt=""></a>
+                    <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/instagram-167-svgrepo-com.svg')}}" alt=""></a>
+                    <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/tiktok-svgrepo-com.svg')}}" alt=""></a>
+                    <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/twitter-svgrepo-com.svg')}}" alt=""></a>
+                </div>
+                <span>
+                    Use su cuenta de Usuario para Iniciar sesion
+                </span>
+                <div class="container-input">
+                    <a href="#">
+                        <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/person-svgrepo-com.svg')}}" alt=""></a>
+                        <input type="text" name="nombrelg" id="nombrelg" placeholder="Nombre">
+                    </a>
+                </div>
+                <div class="container-input">
+                    <a href="#">
+                        <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/padlock-unlocked-svgrepo-com.svg')}}" alt=""></a> 
+                        <input type="password" name="contrasenalg" id="contrasenalg" placeholder="Contraseña">
+                    </a>
+                </div>
+                <a href="#">¿Haz Olvidado tu contraseña?</a>
+                <button class="button" type="submit">INICIAR SESION</button>
+            </form>
+        </div>
+            <div class="container-form">
+                <form action="/insertar" class="sign-up" method="post">
+                    <h2>Registrate!!</h2>
+                    <div class="social-networks">
+                        <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/github-142-svgrepo-com.svg')}}" alt=""></a>
+                        <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/instagram-167-svgrepo-com.svg')}}" alt=""></a>
+                        <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/tiktok-svgrepo-com.svg')}}" alt=""></a>
+                        <a href="##"><img src="{{ url_for('static', filename='IMGs/SocialIcons/twitter-svgrepo-com.svg')}}" alt=""></a>
+                    </div>
+                    <span>
+                        Use su correo electronico para registrarse
+                    </span>
+                    <div class="container-input">
+                        <a href="#">
+                            <a href="##">
+                                <img src="{{ url_for('static', filename='IMGs/SocialIcons/person-svgrepo-com.svg')}}" alt="">
+                            </a>
+                            <input type="text" name="nombrerg" id="nombrerg" placeholder="Nombre">
+                        </a>
+                    </div>
+                    <div class="container-input">
+                        <a href="#">
+                            <a href="##">
+                                <img src="{{ url_for('static', filename='IMGs/SocialIcons//mail-search-svgrepo-com.svg')}}" alt="">
+                            </a>
+                            <input type="email" name="emailrg" id="emailrg" placeholder="Email">
+                        </a>
+                    </div>
+                    <div class="container-input">
+                        <a href="#">
+                            <a href="##">
+                                <img src="{{ url_for('static', filename='IMGs/SocialIcons/padlock-unlocked-svgrepo-com.svg')}}" alt="">
+                            </a>
+                            <input type="password" name="contrasenarg" id="contrasenarg" placeholder="Contraseña">
+                        </a>
+                    </div>
+                    <button class="button Regs" type="submit">REGISTRARSE</button>
+                </form> 
+            </div>
+            <div class="container-welcome">
+                <div class="welcome-sign-up welcome">
+                    <h3>Hola!!</h3>
+                    <p>
+                        Inicia Sesion y Ingrese sus datos personales para usar todas las funciones del sitio
+                    </p>
+                    <div class="line"></div>
+                    <p><b>¿Aun no te has Registrado?</b></p>
+                    <button class="button" id="btn-sign-up">Registrarse</button>
+                </div>
+                <div class="welcome-sign-in welcome">
+                    <h3>Bienvenido!!</h3>
+                    <p>
+                        Registrate para disfrutar de nuestros mejores productos y tener una maxima experiencia
+                    </p>
+                    <div class="line"></div>
+                    <p><b>¿Ya tienes una cuenta?</b></p>
+                    <button class="button" id="btn-sign-in">Iniciar Sesion</button>
+
+                </div>
+            </div>
+    </div>
+    <div id="alerta" style="display: none;" class="alert">
+    <span id="alertaMensaje"></span>
+    </div>
+
+    <div id="alert-container" style="display: none; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 9999;"></div>
+
+</body>
+<script src="{{ url_for('static', filename='JS/Login.js')}}"></script>
+
+</html>

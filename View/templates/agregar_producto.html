@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #003f7f;
+        }
+
+        .form-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777777;
+        }
+    </style>
+     <link
+     rel="icon"
+     type="image/png"
+     href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Agregar Producto</h1>
+        <form action="/agregar_producto" method="POST" enctype="multipart/form-data">
+            <label for="nombre_producto">Nombre del Producto:</label>
+            <input type="text" id="nombre_producto" name="nombre_producto" required>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+
+            <label for="cantidad_disponible">Cantidad Disponible:</label>
+            <input type="number" id="cantidad_disponible" name="cantidad_disponible" required>
+
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required>
+
+            <label for="imagen">Imagen del Producto:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+
+            <button type="submit">Agregar Producto</button>
+        </form>
+        <div class="form-footer">
+            &copy; 2025 Click & Buy. Todos los derechos reservados.
+        </div>
+    </div>
+</body>
+</html>

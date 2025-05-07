@@ -1,0 +1,289 @@
+body{
+    background-color: rgb(206, 206, 206);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+.user-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.option {
+    text-align: center;
+}
+.option img {
+    width: 100px;
+    height: 100px;
+}
+.option button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.option button:hover {
+    background-color: rgb(231, 135, 100);
+}
+.tabla-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(253, 120, 72);
+    color: white;
+}
+
+td[contenteditable="true"] {
+    background-color: #f8f9fa;
+    cursor: text;
+}
+
+button.eliminar {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.eliminar:hover {
+    background-color: darkred;
+}
+
+button.insertar {
+    margin-top: 15px;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.insertar:hover {
+    background-color: rgb(245, 139, 101);
+}
+#gestionDatos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative; /* Asegura que todo el contenido se comporte de manera predecible */
+}
+
+#tablaDatos {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none; /* Remueve el borde de enfoque para evitar distracción */
+}
+
+/* Asegúrate de que el botón siempre esté visible */
+#agregarBtn {
+    visibility: visible !important;
+    display: block; /* Asegura que el botón sea un bloque visible */
+    position: relative;
+    z-index: 1; /* Si hay solapamiento con otros elementos, asegúrate que el botón esté por encima */
+}
+/* Estilos para el formulario de inserción */
+#gestionDatos {
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 270px;
+}
+
+#gestionDatos h2 {
+    font-size: 28px;
+    color: coral;
+    margin-bottom: 20px;
+}
+
+#gestionDatos form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#gestionDatos input, 
+#gestionDatos select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#gestionDatos input:focus, 
+#gestionDatos select:focus {
+    border-color: #005f73;
+    outline: none;
+}
+
+#gestionDatos button {
+    background-color: coral;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#gestionDatos button:hover {
+    background-color: rgb(248, 138, 98);
+}
+
+/* Estilo adicional para inputs de texto */
+#gestionDatos input[type="text"],
+#gestionDatos input[type="number"],
+#gestionDatos input[type="email"] {
+    width: calc(50% - 20px);  /* Asegura que los inputs se alineen */
+}
+
+/* Estilo para el textarea si lo necesitas */
+#gestionDatos textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 100px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#gestionDatos textarea:focus {
+    border-color: #005f73;
+    outline: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+.user-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.option {
+    text-align: center;
+}
+.option img {
+    width: 100px;
+    height: 100px;
+}
+.option button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.option button:hover {
+    background-color: rgb(231, 135, 100);
+} /* Estilo para el input de filtrado */
+#filterInput {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#filterInput:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

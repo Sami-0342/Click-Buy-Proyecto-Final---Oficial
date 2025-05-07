@@ -1,0 +1,243 @@
+/* ----------------------- */
+/* Estilos generales       */
+/* ----------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ----------------------- */
+  /* Hero section            */
+  /* ----------------------- */
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #777;
+  }
+  
+  .hero-button {
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .hero-image img {
+    width: 400px; /* Ajusta según tu imagen */
+    border-radius: 8px;
+  }
+  
+  /* ----------------------- */
+  /* Categories section      */
+  /* ----------------------- */
+  .categories-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+  }
+  
+  .categories-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .categories-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .category-card {
+    text-align: center;
+    width: 150px;
+  }
+  
+  .category-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .category-card p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* ----------------------- */
+  /* Hot Products section    */
+  /* ----------------------- */
+  .hot-products-section {
+    padding: 40px 20px;
+    margin-top: 20px;
+  }
+  
+  .hot-products-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .catalogo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Tarjetas de producto */
+  .product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .no-image {
+    background-color: #ddd;
+    text-align: center;
+    padding: 40px;
+    border-radius: 4px;
+  }
+  
+  .product-info {
+    margin-top: 10px;
+  }
+  
+  .product-info h3 {
+    margin: 0 0 5px;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    color: #e67e22;
+    margin-top: 10px;
+  }
+  
+  .product-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-modificar, .btn-eliminar {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-modificar {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .btn-eliminar {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  /* ----------------------- */
+  /* Modal                   */
+  /* ----------------------- */
+  .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 999; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto; 
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group textarea,
+  .form-group input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-secondary {
+    background-color: #aaa;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  

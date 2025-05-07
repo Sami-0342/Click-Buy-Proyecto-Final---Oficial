@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Usser.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='IMGs/asdas.png') }}"/>
+    <title>Click & Buy / UserAccount</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="{{ url_for('static', filename='IMGs/asdas.png')}}"/>
+</head>
+<body>
+    <div class="header__wrapper">
+        <header></header>
+        <div class="cols__container">
+        <div class="left__col">
+            <div class="img__container">
+                {% if usuario %}
+                    {% if usuario['tipo_usuario'] == 'empleado' %}
+                        <!-- Imagen específica para empleados -->
+                        <img src="{{ url_for('static', filename='IMGs/user.jpg') }}" alt="Empleado"/>
+                    {% elif usuario['tipo_usuario'] == 'cliente' %}
+                        <!-- Imagen específica para clientes -->
+                        <img src="{{ url_for('static', filename='IMGs/comprador.png') }}" alt="Cliente"/>
+                    {% elif usuario['tipo_usuario'] == 'Admin' %}
+                        <!-- Imagen específica para admins -->
+                        <img src="{{ url_for('static', filename='IMGs/admin.png') }}" alt="Cliente"/>
+                    {% endif %}
+                {% else %}
+                    <p>No se ha iniciado sesión</p>
+                {% endif %}
+            </div>
+            {% if usuario %}
+                <h2>{{ usuario['nombre_usuario'] }}</h2>
+                <p>{{ usuario['tipo_usuario'] }}</p>  <!-- Mostrar el tipo de usuario -->
+            {% else %}
+                <p>No se ha iniciado sesión</p>
+            {% endif %}
+            <br>
+            <ul class="about">
+                <li><span>4,073</span> Followers</li>
+                <li><span>322</span> Following</li>
+                <li><span>200,543</span> Attraction</li>
+            </ul>
+            <br>
+            <div class="content">
+             
+                <ul class="SocialIcons">
+                    <li><img src="{{ url_for('static', filename='IMGs/SocialIcons/twitter-svgrepo-com.svg')}}" alt=""></li>
+                    <li><img src="{{ url_for('static', filename='IMGs/SocialIcons/tiktok-svgrepo-com.svg')}}" alt=""></li>
+                    <li><img src="{{ url_for('static', filename='IMGs/SocialIcons/github-142-svgrepo-com.svg')}}" alt=""></li>
+                    <li><img src="{{ url_for('static', filename='IMGs/SocialIcons/instagram-167-svgrepo-com.svg')}}" alt=""></li>
+                </ul>
+            </div>
+            
+        </div>
+        <a class="log-on" href="/index">Cerrar Sesion</a>
+
+    </div>
+</body>
+</html>
